@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Edit Buyer</h1>
+            <h1 class="m-0 text-dark">Edit Supplier</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -31,11 +31,11 @@
                   <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{$data[0]->name}}" placeholder="Enter Buyer Name">
+                    <input type="text" class="form-control" id="name" name="name" value="{{$data[0]->name}}" placeholder="Enter Supplier Name">
                       </div>
                       <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" value="{{$data[0]->address}}" placeholder="Enter Buyer Address">
+                        <input type="text" class="form-control" id="address" name="address" value="{{$data[0]->address}}" placeholder="Enter Supplier Address">
                       </div>
                       <div class="form-group">
                         <label for="contact_person">Contact Person</label>

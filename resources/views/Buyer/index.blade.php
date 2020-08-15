@@ -12,7 +12,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Buyers</h1>
+            <h1 class="m-0 text-dark">Suppliers</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -20,7 +20,7 @@
 
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Buyer List</h3>
+        <h3 class="card-title">Supplier List</h3>
         <span align-left>
           <a class="btn btn-action btn-primary float-right" href="{{route('buyer.create')}}" title="Create">Create</a>
         </span>

@@ -35,6 +35,8 @@ Route::delete('/product/{id}', 'Master\ProductController@destroy');
 
 Route::get('product/index', 'productController@index')->name('product/index');
 
+Route::get('master/buyer/{id}/view', 'Master\BuyerController@view')->name('master/buyer/{id}/view');
+
 
 
 

@@ -8,9 +8,7 @@
     </a>
 
     <!-- Sidebar -->
-    @guest
-        
-    @endguest
+    
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -34,7 +32,8 @@
                 Dashboard
               </p>
             </a>
-            
+          </li>
+            {{-- Master data bigins --}}
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -46,7 +45,7 @@
               <li class="nav-item">
                 <a href="{{route('buyer.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Buyer</p>
+                  <p>Suppliers</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -55,8 +54,38 @@
                   <p>Product Catogary Master</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('product.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Services</p>
+                  </a>
+                </li>
             </ul>
           </li>
+          {{-- master data ends --}}
+          {{-- <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Production Management
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('buyer.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p></p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="{{route('product.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Product Catogary Master</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li> --}}
                </ul>
       </nav>
       <!-- /.sidebar-menu -->

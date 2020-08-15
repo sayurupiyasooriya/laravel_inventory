@@ -13,6 +13,7 @@ use Session;
 
 class BuyerController extends Controller
 {
+    protected $buyerId;
 
     public function __construct()
     {
@@ -71,9 +72,22 @@ class BuyerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function view($id)
     {
-        //
+        $this->buyerId = $id;
+        $data = Buyer::where('id', $id)->get();
+        if($data){
+            return view('Buyer.view', compact('data'));
+        }
+    }
+
+    public  function getBuyerName(){
+        
+        $data = Buyer::where('id', $this->buyerId)->get();
+        foreach ($data as $buyers) {
+            $buyerName = $buyers['name'];
+        }
+        return $buyerName ?? '';
     }
 
     public function getTableData(){
