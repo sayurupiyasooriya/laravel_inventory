@@ -65804,6 +65804,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
+__webpack_require__(/*! ./components/Production */ "./resources/js/components/Production.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -65888,6 +65890,17 @@ function Example() {
 if (document.getElementById('example')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('example'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Production.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Production.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/sayuru/Projects/inventory/resources/js/components/Production.js: Only one default export allowed per module. (36:0)\n\n\u001b[0m \u001b[90m 34 | \u001b[39m    )\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 | \u001b[39m}\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[33mWel\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 37 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 | \u001b[39m\u001b[36mif\u001b[39m (document\u001b[33m.\u001b[39mgetElementById(\u001b[32m'production'\u001b[39m)) {\u001b[0m\n\u001b[0m \u001b[90m 39 | \u001b[39m    \u001b[33mReactDOM\u001b[39m\u001b[33m.\u001b[39mrender(\u001b[33m<\u001b[39m\u001b[33mProduction\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m,\u001b[39m document\u001b[33m.\u001b[39mgetElementById(\u001b[32m'production'\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:757:17)\n    at Object.raiseWithData (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:750:17)\n    at Object.raise (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:744:17)\n    at Object.checkDuplicateExports (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:12566:12)\n    at Object.checkExport (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:12491:14)\n    at Object.parseExport (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:12315:12)\n    at Object.parseStatementContent (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:11314:27)\n    at Object.parseStatement (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:11210:17)\n    at Object.parseBlockOrModuleBlockBody (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:11785:25)\n    at Object.parseBlockBody (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:11771:10)\n    at Object.parseTopLevel (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:11141:10)\n    at Object.parse (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:12843:10)\n    at parse (/home/sayuru/Projects/inventory/node_modules/@babel/parser/lib/index.js:12896:38)\n    at parser (/home/sayuru/Projects/inventory/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/home/sayuru/Projects/inventory/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/home/sayuru/Projects/inventory/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/home/sayuru/Projects/inventory/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/home/sayuru/Projects/inventory/node_modules/gensync/index.js:254:32)\n    at /home/sayuru/Projects/inventory/node_modules/gensync/index.js:266:13\n    at async.call.result.err.err (/home/sayuru/Projects/inventory/node_modules/gensync/index.js:216:11)\n    at /home/sayuru/Projects/inventory/node_modules/gensync/index.js:184:28\n    at /home/sayuru/Projects/inventory/node_modules/@babel/core/lib/gensync-utils/async.js:72:7\n    at /home/sayuru/Projects/inventory/node_modules/gensync/index.js:108:33\n    at step (/home/sayuru/Projects/inventory/node_modules/gensync/index.js:280:14)\n    at /home/sayuru/Projects/inventory/node_modules/gensync/index.js:266:13\n    at async.call.result.err.err (/home/sayuru/Projects/inventory/node_modules/gensync/index.js:216:11)");
 
 /***/ }),
 

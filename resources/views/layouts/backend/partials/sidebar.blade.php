@@ -62,31 +62,27 @@
                 </li>
             </ul>
           </li>
-          {{-- master data ends --}}
-          {{-- <li class="nav-item">
+          {{-- Master Data Ends here --}}
+
+          {{-- Production begins --}}
+          <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Production Management
+                Production Master
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('buyer.index')}}" class="nav-link">
+                <a href="{{ route('productions') }} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p></p>
+                  <p>Production</p>
                 </a>
               </li>
-              <li class="nav-item">
-              <a href="{{route('product.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Product Catogary Master</p>
-                </a>
-              </li>
-              
             </ul>
-          </li> --}}
-               </ul>
+          </li>
+          {{-- Production ends --}}
+               
       </nav>
       <!-- /.sidebar-menu -->
     </div>

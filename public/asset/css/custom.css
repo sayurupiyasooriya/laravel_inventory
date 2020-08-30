@@ -1,0 +1,10 @@
+.selected{
+    background-color: #EAE1E0;
+}
+#create{
+    display: none;
+    visibility: hidden;
+}
+.append>ul>li{
+    list-style-type: none;
+}

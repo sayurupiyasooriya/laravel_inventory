@@ -37,8 +37,6 @@ Route::get('product/index', 'productController@index')->name('product/index');
 
 Route::get('master/buyer/{id}/view', 'Master\BuyerController@view')->name('master/buyer/{id}/view');
 
+Route::get('/productions', 'Productions\ProductionsController@index')->name('productions');
 
-
-
-
-
+Route::post('/productions/save', 'Productions\ProductionsController@saveData')->name('productions/save');

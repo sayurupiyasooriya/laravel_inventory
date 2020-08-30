@@ -15,6 +15,19 @@ class CreateProductionsTable extends Migration
     {
         Schema::create('productions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('supplier_id');
+            $table->foreign('supplier_id')->reference('id')->on('buyers');
+            $table->unsignedBigInteger('product_category_id');
+            $table->foreign('product_category_id')->reference('id')->on('product_categories');
+            $table->char('product_name', 100);
+            $table->char('searial', 100);
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->integer('availability');
+            
+
+
+
             $table->timestamps();
         });
     }
