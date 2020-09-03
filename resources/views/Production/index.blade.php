@@ -115,6 +115,10 @@
             $(event.target).toggleClass('selected');
         }
 
+        function removeAll(){
+            $('.append > ul > li').remove();
+        }
+
 
 
 
@@ -162,7 +166,8 @@
                 prdName:prdName
                     },
                     success:function(e){
-                        toastr.success(e + " Records added successfully")
+                        toastr.success(e + " Records added successfully");
+                        removeAll();
                     },
                     error:function(){
                         toastr.error("Please check and fill all the fields");

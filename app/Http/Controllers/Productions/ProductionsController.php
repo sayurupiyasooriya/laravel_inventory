@@ -17,8 +17,8 @@ use Illuminate\Http\JsonResponse;
 class ProductionsController extends Controller
 {
     public function index(){
-        $buyers = Buyer::select('id', 'name')->get();
-        $productionCat = ProductCategory::select('id', 'type')->get();
+        $buyers = Buyer::select('id', 'name')->where('flag', '1')->get();
+        $productionCat = ProductCategory::select('id', 'type')->where('flag', '1')->get();
         return view('Production.index', ['buyers'=>$buyers, 'productCat'=>$productionCat]);
     }
     public function saveData(Request $request){
