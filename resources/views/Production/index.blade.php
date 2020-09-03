@@ -27,61 +27,61 @@
         </div>
         <!-- /.card-header -->
         <div class="container">
-           
+
             <form method="POST" action="">
-            {{-- select supplier --}}
-            {{ csrf_field() }}
-            <div class="form-inline">
-            <div class="form-group ml-2">
-                <label for="supplier_id">Select Supplier</label>
-                <select name="supplier_id" id="supplier_id" class="form-control supplier_id">
-                    <option selected="selected" value="">Select a Supplier</option>
-                    @foreach ($buyers as $buyer)
-                    <option value="{{$buyer->id}}">{{$buyer->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+                {{-- select supplier --}}
+                {{ csrf_field() }}
+                <div class="form-inline">
+                    <div class="form-group ml-2">
+                        <label for="supplier_id">Select Supplier</label>
+                        <select name="supplier_id" id="supplier_id" class="form-control supplier_id">
+                            <option selected="selected" value="">Select a Supplier</option>
+                            @foreach ($buyers as $buyer)
+                            <option value="{{$buyer->id}}">{{$buyer->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-            {{-- select product --}}
-            <div class="form-group ml-2">
-                <label for="prd_cat">Select Production Category</label>
-                <select name="prd_cat" id="prd_cat" class="form-control">
-                    @foreach ($productCat as $product)
-                    <option value="{{$product->id}}">{{$product->type}}</option>
-                    @endforeach
-                </select>
-            </div>
-            
-            <div class="form-group ml-2">
-                <label for="product-name">Enter Product Name</label>
-                <input type="text" name="product-name" id="production-name">
-            </div>
+                    {{-- select product --}}
+                    <div class="form-group ml-2">
+                        <label for="prd_cat">Select Production Category</label>
+                        <select name="prd_cat" id="prd_cat" class="form-control">
+                            @foreach ($productCat as $product)
+                            <option value="{{$product->id}}">{{$product->type}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-            <div class="form-group ml-2 ">
-                <input type="text" value=""  id = "add-field" name="product-name">
-            </div>
-        </div>
+                    <div class="form-group ml-2">
+                        <label for="product-name">Enter Product Name</label>
+                        <input type="text" name="product-name" id="production-name">
+                    </div>
 
-
-            <div class="row">
-                
-                <div class="col-sm-8 float-right">
-                    <div class="append" id="append" name="append" style="height:224px; overflow:auto;">
-                        <ul>
-                            
-                        </ul>
+                    <div class="form-group ml-2 ">
+                        <input type="text" value="" id="add-field" name="product-name">
                     </div>
                 </div>
-            </div>
-            {{-- <a class="btn btn-action btn-warning float-right" title="Save" onclick="save_data()"  id="save">Save</a> --}}
-            <input type="submit" name="create" id="create" >
-            <a class="btn btn-action btn-danger float-left" title="Delete" id="del">Delete</a>
-            <input type="submit" name="saveData" id="saveData"  value="Save" class="btn btn-warning float-right">
-            
-            {{-- <a class="btn btn-action btn-primary float-right" title="Create" id="create">Create</a> --}}
-                    </form>
 
-            
+
+                <div class="row">
+
+                    <div class="col-sm-8 float-right">
+                        <div class="append" id="append" name="append" style="height:224px; overflow:auto;">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{-- <a class="btn btn-action btn-warning float-right" title="Save" onclick="save_data()"  id="save">Save</a> --}}
+                <input type="submit" name="create" id="create">
+                <a class="btn btn-action btn-danger float-left" title="Delete" id="del">Delete</a>
+                <input type="submit" name="saveData" id="saveData" value="Save" class="btn btn-warning float-right">
+
+                {{-- <a class="btn btn-action btn-primary float-right" title="Create" id="create">Create</a> --}}
+            </form>
+
+
         </div>
 
 
@@ -96,7 +96,8 @@
             var addField = $('#add-field');
             var addfleidText = addField.val();
 
-            var appendableItem = ('<li><div class="item" txt="'+ addfleidText +'" onclick="itemSelect(this)">' + addfleidText + '</div></li>');
+            var appendableItem = ('<li><div class="item" txt="' + addfleidText + '" onclick="itemSelect(this)">' +
+                addfleidText + '</div></li>');
 
             $('.append > ul').append(appendableItem);
             $('#add-field').val("");
@@ -106,7 +107,7 @@
             $('.append>ul>li>.selected').remove();
         }
 
-        function dleteAll(){
+        function dleteAll() {
             $('.append>ul>li').remove();
         }
 
@@ -119,11 +120,11 @@
 
         $(document).ready(function () {
             // $('#create').attr('onclick', 'addItems()');
-            $("#supplier_id").change(function(){
-                
+            $("#supplier_id").change(function () {
+
             })
 
-            $('#create').click(function (e){
+            $('#create').click(function (e) {
                 e.preventDefault();
                 addItems();
             });
@@ -131,46 +132,45 @@
             $('#del').attr('onclick', 'deleteField()');
 
             // save form data
-            $('#saveData').click(function (e) { 
+            $('#saveData').click(function (e) {
                 e.preventDefault();
-                
+
                 var supplierId = $("#supplier_id").val();
                 var prdCatId = $("#prd_cat").val();
                 var prdName = $("#production-name").val();
                 // serial numbers
                 var seldata = [];
-                $('.append').find(".item").each(function(){
+                $('.append').find(".item").each(function () {
                     seldata.push($(this).attr("txt"));
                 });
 
 
 
                 $.ajaxSetup({
-                    headers:{
+                    headers: {
                         'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr('content')
                     }
                 });
+
                 $.ajax({
                     url: "{{url('productions/save')}}",
-                    method: 'POST',
+                    type: 'POST',
                     data:{
-                        serial: seldata,
-                        supplierId:supplierId,
-                        prdCatId:prdCatId,
-                        prdName:prdName
-                        // supplierId:supplierId
-                },
-                    success: function(result){
-                        console.log(result);
-                        
+                serial: seldata,
+                supplierId:supplierId,
+                prdCatId:prdCatId,
+                prdName:prdName
+                    },
+                    success:function(e){
+                        toastr.success(e + " Records added successfully")
+                    },
+                    error:function(){
+                        toastr.error("Please check and fill all the fields");
                     }
+                   
                 });
-                
-            });
-            // save form data ends
 
-
-
+        });
         });
 
     </script>
