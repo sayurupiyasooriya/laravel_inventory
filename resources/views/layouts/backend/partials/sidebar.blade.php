@@ -76,7 +76,15 @@
               <li class="nav-item">
                 <a href="{{ route('productions') }} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Production</p>
+                  <p>Insert To Inventry </p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('productions/view') }} " class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Inventry Items</p>
                 </a>
               </li>
             </ul>
