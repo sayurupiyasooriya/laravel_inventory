@@ -43,3 +43,7 @@ Route::get('/productions', 'Productions\ProductionsController@create')->name('pr
 Route::post('/productions/save', 'Productions\ProductionsController@saveData')->name('productions/save');
 
 Route::get('/productions/view', 'Productions\ProductionsController@view')->name('productions/view');
+
+Route::get('/productions/dataTable', 'Productions\ProductionsController@getDataTable')->name('productions/dataTable');
+
+Route::get('/productions/test', 'Productions\ProductionsController@getDataTable')->name('productions/dataTable');

@@ -31,9 +31,14 @@
         <table id="example1" class="table table-bordered table-striped" style="width: 100%">
           <thead>
           <tr>
-            <th>ID</th>
-            <th>Category</th>
-            <th>Action</th>
+            {{-- <th>Id</th> --}}
+            <th>Name</th>
+            <th>Product Category Name</th>
+            <th>Supplier Name</th>
+            <th>Count</th>
+
+
+            
           </tr>
         </table>
       </div>
@@ -60,11 +65,17 @@
       stateSave:false,
       scrollY:true,
       scrollX:true,
-      ajax:"{{ url('product/datatable') }}",
+      ajax:"{{ url('productions/dataTable') }}",
       columns:[
-        {data:'id', name:'id'},
-        {data:'type', name:'type'},
-        {data:'action', name:'action', width:"100px"},
+        {data:'ProductionName', name:'ProductionName'},
+        {data:'ProductCatName', name:'ProductCatName'},
+        {data:'SupplierName', name:'SupplierName'},
+        {data:'ProductionCount', name:'ProductionCount'},
+       
+        
+
+        // {data:'type', name:'type'},
+        // {data:'action', name:'action', width:"100px"},
 
               ]
     });

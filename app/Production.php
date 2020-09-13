@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Production extends Model
 {
     protected $tabel = 'productions';
@@ -12,7 +13,7 @@ class Production extends Model
     }
 
     public function supplier_id(){
-        return $this->belongsTo('/APP/Model/Master/Buyer', 'supplier_id');
+        return $this->belongsTo('App\Model\Master\Buyer', 'supplier_id');
     }
 
     public function product_category_id(){

@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Production;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
+use Yajra\DataTables\DataTables;
+
 
 
 
@@ -42,9 +44,35 @@ class ProductionsController extends Controller
         return view('Production.view');
     }
 
-    public function getTableData(){
-        $data = Productions::get();
+    public function getDataTable(){
+        $items = DB::table("productions")
+                ->join('buyers', 'buyers.id', '=', 'productions.supplier_id')
+                ->join('product_categories', 'productions.product_category_id', '=', 'product_categories.id')
+                ->select( 'product_name', (DB::raw('count(serial) as serialCount')),'buyers.name','product_categories.type as productCatName')
+                ->groupBy( 'product_name', 'buyers.name','product_categories.type' )
+                ->get();
+        // get production count
+        $test = json_decode($items, true);
+        $count = count($test);
+        
 
+        // get production json
+        for($i = 0; $i<$count; $i++ ){
+        $data[]=[
+            // 'ProductionId' => $test[$i]['id'],
+            'ProductionName' =>  $test[$i]['product_name'],
+            'SupplierName' => $test[$i]['name'],
+            'ProductionCount' =>  $test[$i]['serialCount'],
+            'ProductCatName' =>$test[$i]['productCatName'],
+            
+        ];
+        }
+        
+        return  DataTables::of($data)->make();
+        // return $count;
+        // return $data;
+        // return $items;
+    }
     }
         
-}
+
