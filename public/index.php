@@ -11,7 +11,6 @@ define('LARAVEL_START', microtime(true));
 
 
 
-fuck
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader 
