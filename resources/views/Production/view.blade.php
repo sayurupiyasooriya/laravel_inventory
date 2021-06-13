@@ -19,12 +19,6 @@
     </div>
 
     <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Product Category List</h3>
-        <span align-left>
-          <a class="btn btn-action btn-primary float-right" href="{{route('product.create')}}" title="Create">Create</a>
-        </span>
-      </div>
       <!-- /.card-header -->
       <div class="card-body">
           <div>
@@ -35,10 +29,7 @@
             <th>Name</th>
             <th>Product Category Name</th>
             <th>Supplier Name</th>
-            <th>Count</th>
-
-
-            
+            <th>Count</th>      
           </tr>
         </table>
       </div>
@@ -52,7 +43,7 @@
             <!-- /.card -->
   @endsection
   @push('js')
-  <script src="{{ asset('asset/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('asset/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('asset/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('asset/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('asset/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
@@ -70,40 +61,10 @@
         {data:'ProductionName', name:'ProductionName'},
         {data:'ProductCatName', name:'ProductCatName'},
         {data:'SupplierName', name:'SupplierName'},
-        {data:'ProductionCount', name:'ProductionCount'},
-       
-        
-
-        // {data:'type', name:'type'},
-        // {data:'action', name:'action', width:"100px"},
-
+        {data:'ProductionCount', name:'ProductionCount'}
               ]
     });
   });
-</script>
-<script>
-  function deleteData(dt){
-    if (confirm("Confirm Delete")) {
-      $.ajax({
-        type:"DELETE",
-        url:$(dt).data("url"),
-        data:{
-          "_token":"{{ csrf_token() }}"
-        },
-        success:function(response) {
-          if(response.status){
-            location.reload();
-          }
-        },
-        error:function(response){
-            console.log(response);
-          }
-        
-      });
-      
-    }
-    return false;
-  }
 </script>
 @endpush
 
