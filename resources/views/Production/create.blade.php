@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 @push('css')
-    {{-- <link rel="stylesheet" href="{{ asset('asset/css/custom.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('asset/css/custom.css') }}">
 @endpush
 @section('content')
 
@@ -44,7 +44,7 @@
                         {{-- select product --}}
                         <div class="form-group ml-2">
                             <select name="prd_cat" id="prd_cat" class="form-control">
-                                <option selected="selected" value="">Select Product category</option>
+                                <option selected="seleted" value="">Select a Production Category</option>
                                 @foreach ($productCat as $product)
                                     <option value="{{ $product->id }}">{{ $product->type }}</option>
                                 @endforeach
@@ -72,11 +72,13 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <a class="btn btn-action btn-warning float-right" title="Save" onclick="save_data()"  id="save">Save</a> --}}
                     <div class="float-left">
+                        <input class="invisible" type="submit" name="create" id="create">
                         <input type="submit" name="saveData" id="saveData" value="Save" class="btn btn-warning">
                         <a class="btn btn-action btn-danger" title="Delete" id="del">Delete</a>
+
                     </div>
+
                 </form>
 
 

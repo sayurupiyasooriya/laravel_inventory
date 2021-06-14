@@ -1,13 +1,15 @@
 .selected{
     background-color: #EAE1E0;
 }
-#create{
-    display: none;
-    visibility: hidden;
-}
+
 .append>ul>li{
     list-style-type: none;
 }
+/* #create{
+    display: none;
+    visibility: hidden;
+}
+
 
 html, body{
     background-color: #fff;
@@ -59,4 +61,4 @@ html, body{
 
 .m-b-md {
     margin-bottom: 30px;
-}
+} */
